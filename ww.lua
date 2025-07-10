@@ -3,7 +3,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 -- Create the key system window
 local Window = Rayfield:CreateWindow({
-    Name = "Galaxy ",
+    Name = "Galaxy",
     LoadingTitle = "Loading Galaxy...",
     LoadingSubtitle = "Secure Access Required",
     ConfigurationSaving = {
@@ -12,15 +12,35 @@ local Window = Rayfield:CreateWindow({
     Discord = {
         Enabled = false,
     },
-    KeySystem = true,  -- Enable key system
+    KeySystem = true,
     KeySettings = {
         Title = "Enter Access Key",
         Subtitle = "Type the key to unlock",
-        Note = "Contact  if you don't have a key",
+        Note = "If you don't have the key, join our Discord server.",
         FileName = "GalaxyKey",
         SaveKey = false,
         Key = "Gax",
-        GiveKeyUrl = "https://discord.gg/yqcD2DwHbg",  -- Optional URL if you want
+        GiveKeyUrl = "https://discord.gg/yqcD2DwHbg"
+    }
+})
+
+-- زر لنسخ رابط الديسكورد إذا ما عنده المفتاح
+Rayfield:Notify({
+    Title = "Need Key?",
+    Content = "Click the button below to copy the Discord link.",
+    Duration = 6.5,
+    Actions = {
+        Ignore = {
+            Name = "Copy Link",
+            Callback = function()
+                setclipboard("https://discord.gg/yqcD2DwHbg")
+                Rayfield:Notify({
+                    Title = "Copied!",
+                    Content = "Discord invite link copied to your clipboard.",
+                    Duration = 4
+                })
+            end
+        }
     }
 })
 
