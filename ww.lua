@@ -1,30 +1,39 @@
--- تحميل مكتبة Rayfield
+-- Load Rayfield library
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
--- إنشاء النافذة
+-- Create the key system window
 local Window = Rayfield:CreateWindow({
-	Name = "Galaxy", 
-	LoadingTitle = "تشغيل الواجهة...",
-	LoadingSubtitle = "by Galaxy", 
-	ConfigurationSaving = {
-		Enabled = false,
-	},
-	Discord = {
-		Enabled = false,
-	},
-	KeySystem = false,
+    Name = "Galaxy ",
+    LoadingTitle = "Loading Galaxy...",
+    LoadingSubtitle = "Secure Access Required",
+    ConfigurationSaving = {
+        Enabled = false,
+    },
+    Discord = {
+        Enabled = false,
+    },
+    KeySystem = true,  -- Enable key system
+    KeySettings = {
+        Title = "Enter Access Key",
+        Subtitle = "Type the key to unlock",
+        Note = "Contact  if you don't have a key",
+        FileName = "GalaxyKey",
+        SaveKey = false,
+        Key = "Gax",
+        GiveKeyUrl = "https://discord.gg/yqcD2DwHbg",  -- Optional URL if you want
+    }
 })
 
--- إنشاء تبويب
-local MainTab = Window:CreateTab("الرئيسية", 4483362458)
+-- Create main tab
+local MainTab = Window:CreateTab("Main", 4483362458)
 
--- إنشاء قسم
-local Section = MainTab:CreateSection("تشغيل السكربت")
+-- Create section in main tab
+local Section = MainTab:CreateSection("Script Execution")
 
--- زر تنفيذ السكربت
+-- Add button to execute external script
 MainTab:CreateButton({
-	Name = "🚀 تشغيل السكربت الخارجي",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Youifpg/Steal-a-Brianrot/refs/heads/main/Final.lua"))()
-	end,
+    Name = "Steal Map Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Youifpg/Steal-a-Brianrot/refs/heads/main/Final.lua"))()
+    end,
 })
