@@ -32,7 +32,7 @@ local Section = MainTab:CreateSection("Script Execution")
 
 -- Add button to execute external script
 MainTab:CreateButton({
-    Name = "Steal Map Script",
+    Name = "Steal Map | Made By Azc - Key Azc",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Youifpg/Steal-a-Brianrot/refs/heads/main/Final.lua"))()
     end,
